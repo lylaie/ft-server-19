@@ -1,2 +1,6 @@
 FROM debian:buster
-CMD start_script.sh
+
+COPY src/* ./root/
+
+RUN ["chmod", "+x", "/root/install_script.sh"]
+RUN /root/install_script.sh
